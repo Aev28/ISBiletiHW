@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Bileti.Domain.Models.Ticket>
+
+@{
+    ViewData["Title"] = "Bileti";
+}
+
+<h1>Bileti</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+@using (Html.BeginForm("ExportAllTickets", "Tickets", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group w-50">
+        <label for="genre" class="control-label">Genre</label>
+        <select id="genre" name="genre" class="form-control">
+            @foreach (var genre in ViewBag.Genres)
+            {
+                <option value="@genre">@genre</option>
+            }
+        </select>
+    </div>
+    <input type="submit" class="btn btn-info" value="Export" />
+}
+@using (Html.BeginForm("Search", "Tickets", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+                <div class="form-group w-50 mt-3">
+                    <label>Valid until date: </label>
+                        <input type="date" name="date" class="form-control" />
+                        <br />
+                        <input type="submit" value="Filter" class="btn btn-primary" />
+                </div>
+        }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateValid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.selectedGenre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateValid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.selectedGenre)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                    <a class="btn btn-success" asp-action="AddToCart" asp-route-id="@item.Id">Add to Cart</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

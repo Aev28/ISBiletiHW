@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Bileti.Domain.Models.Order>
+
+@{
+    ViewData["Title"] = "Order";
+}
+
+<h1>Orders</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Order id
+            </th>
+            <th>
+                Date of purchase
+            </th>
+            <th>
+                Total price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total)
+            </td>
+             <td>
+                <a class="btn btn-outline-primary" asp-action="CreateInvoice" asp-route-id="@item.Id">Create Invoice</a>
+             </td>
+        </tr>
+}
+    </tbody>
+</table>

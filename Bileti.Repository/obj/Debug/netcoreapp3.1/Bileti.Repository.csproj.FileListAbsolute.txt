@@ -1,0 +1,13 @@
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\bin\Debug\netcoreapp3.1\Bileti.Repository.deps.json
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\bin\Debug\netcoreapp3.1\Bileti.Repository.dll
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\bin\Debug\netcoreapp3.1\Bileti.Repository.pdb
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\bin\Debug\netcoreapp3.1\Bileti.Domain.dll
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\bin\Debug\netcoreapp3.1\Bileti.Domain.pdb
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\obj\Debug\netcoreapp3.1\Bileti.Repository.csproj.AssemblyReference.cache
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\obj\Debug\netcoreapp3.1\Bileti.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\obj\Debug\netcoreapp3.1\Bileti.Repository.AssemblyInfoInputs.cache
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\obj\Debug\netcoreapp3.1\Bileti.Repository.AssemblyInfo.cs
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\obj\Debug\netcoreapp3.1\Bileti.Repository.csproj.CoreCompileInputs.cache
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\obj\Debug\netcoreapp3.1\Bileti.Repository.csproj.CopyComplete
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\obj\Debug\netcoreapp3.1\Bileti.Repository.dll
+C:\Users\pavel\source\repos\ISDomasna201071\Bileti.Repository\obj\Debug\netcoreapp3.1\Bileti.Repository.pdb
