@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -139,7 +140,7 @@ namespace Bileti.Web.Controllers
             var serviceProvider = HttpContext.RequestServices;
             var roleManager = serviceProvider.GetService<RoleManager<IdentityRole>>();
 
-            user.Roles = await roleManager.Roles.Select(r => r.Name).ToListAsync();
+            user.Roles = new List<string> { "STANDARD", "ADMINISTRATOR" };
 
             var currentUser = await userManager.GetUserAsync(User);
             if (currentUser != null)
@@ -193,14 +194,14 @@ namespace Bileti.Web.Controllers
                     await userManager.AddToRoleAsync(userByEmail, standardRoleName);
                 }
 
-                user.Roles = await roleManager.Roles.Select(r => r.Name).ToListAsync();
+                user.Roles = new List<string> { "STANDARD", "ADMINISTRATOR" };
                 var userRoles = await userManager.GetRolesAsync(userByEmail);
                 user.SelectedRole = userRoles.FirstOrDefault();
 
                 return RedirectToAction("Index", "Tickets");
             }
 
-            user.Roles = await roleManager.Roles.Select(r => r.Name).ToListAsync();
+            user.Roles = new List<string> { "STANDARD", "ADMINISTRATOR" };
 
             return View(user);
         }
