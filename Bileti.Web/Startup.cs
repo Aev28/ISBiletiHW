@@ -47,10 +47,10 @@ namespace Bileti.Web
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
             services.AddScoped(typeof(IOrderRepository), typeof(OrderRepository));
 
-            services.AddScoped<EmailSettings>(es => emailSettings);
-            services.AddScoped<IEmailService, EmailService>(email => new EmailService(emailSettings));
-            services.AddScoped<IBackgroundEmailSender, BackgroundEmailSender>();
-            services.AddHostedService<EmailScopedHostedService>();
+            //services.AddScoped<EmailSettings>(es => emailSettings);
+            //services.AddScoped<IEmailService, EmailService>(email => new EmailService(emailSettings));
+            //services.AddScoped<IBackgroundEmailSender, BackgroundEmailSender>();
+            //services.AddHostedService<EmailScopedHostedService>();
 
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
 
